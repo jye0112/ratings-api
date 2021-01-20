@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ratingsapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ratingsapi
+  template:
+    metadata:
+      labels:
+        app: ratingsapi 
+    spec:
+      containers:
+        - name: ratingsapi 
+          image: jyecontainerregistry.azurecr.io/ratingsapi
+          ports:
+          - containerPort: 80
