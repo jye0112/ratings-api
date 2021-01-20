@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
 
 # Install node dependencies - done in a separate step so Docker can cache it
-COPY ["package*.json", "Pipeline Test"]
+COPY package*.json ./
 RUN npm install
 
 # Expose port 3000, which is what the node process is listening to
