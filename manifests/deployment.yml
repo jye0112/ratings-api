@@ -17,13 +17,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000 # the application listens to this port
-        resources:
-          requests: # minimum resources required
-            cpu: 3000m
-            memory: 64Mi
-          limits: # maximum resources allocated
-            cpu: 3000m
-            memory: 256Mi
         readinessProbe: # is the container ready to receive traffic?
           httpGet:
             port: 3000
